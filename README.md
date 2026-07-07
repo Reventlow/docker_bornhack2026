@@ -8,7 +8,7 @@ Host: Gorm Reventlow.
 
 ```sh
 docker run -d -p 8080:80 elohite/bornhack-deck
-# open http://localhost:8080 — arrow keys / space to navigate
+# open http://localhost:8080 — arrow keys / space to navigate, "f" toggles fullscreen
 ```
 
 The deck is fully self-contained (fonts inlined) and works offline.
@@ -37,6 +37,8 @@ source/                ← editable design-tool source; kept for provenance only
 
 Edits to the deck happen in `source/Docker for the Curious.dc.html` and are
 re-bundled by the design tool; `deck/index.html` is the build artifact we serve.
+After a re-bundle, run `./scripts/patch-deck.sh` to re-apply the tab title,
+favicon, and the "f" fullscreen toggle (the bundler's outer shell lacks them).
 
 ## CI / publishing
 
