@@ -1,21 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+  ┌────────────────────────────────────────────────────────────────┐
+  │  hello, source reader. you found the good stuff.               │
+  │                                                                │
+  │  a container is just a normal process                          │
+  │  wearing a filesystem as a costume.                            │
+  │                                                                │
+  │  nano survival kit:   ^O save    ^X exit    ^W search          │
+  │  cheat codes:         docker exec -it camp bash                │
+  │                       docker diff camp                         │
+  │  broke the page? no shame. containers are cattle:              │
+  │    docker rm -f camp && docker run -d -p 8080:80 \             │
+  │      --name camp elohite/bornhack2026                          │
+  │  ...and you get a factory-fresh copy. that is the lesson.      │
+  │                                                                │
+  │  the old codes still work:  ↑ ↑ ↓ ↓ ← → ← → B A                │
+  └────────────────────────────────────────────────────────────────┘
+-->
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>I was at BornHack 2026</title>
-<style>
-  html, body { margin: 0; height: 100%; }
-  body { display: flex; align-items: center; justify-content: center; background: #D0D0C8; color: #242424; font-family: ui-monospace, 'JetBrains Mono', monospace; }
-  main { text-align: center; padding: 24px; }
-  h1 { font-size: clamp(28px, 6vw, 64px); margin: 0; }
-  p { color: #6B7360; font-size: clamp(14px, 2vw, 22px); margin: 18px 0 0; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>I was at BornHack 2026</title>
+  <style>
+    /* one tube, one phosphor. deck orange #DE6A41 doubles as amber P3. */
+    :root {
+      --screen: #0d0b09;                       /* warm CRT black */
+      --amber:  #ffb473;                       /* bright phosphor: commands, headline */
+      --ember:  #de6a41;                       /* deck orange: prompts, whale, chrome */
+      --paper:  #d6ccbc;                       /* program output */
+      --dim:    #8d7a68;                       /* whispers */
+      --glow:   0 0 12px rgba(255, 180, 115, .38);
+    }
+    /* konami swaps the tube for green P1 phosphor (see script at the bottom) */
+    html.p1 {
+      --amber: #a6e88a; --ember: #6faf52; --paper: #c9d6bd; --dim: #7a8a6d;
+      --glow: 0 0 12px rgba(166, 232, 138, .38);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100svh;
+      padding: 4vmin;
+      background: radial-gradient(120% 90% at 50% 42%, #171209 0%, var(--screen) 72%);
+      color: var(--paper);
+      font-family: ui-monospace, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: clamp(15px, 1.9vw, 21px);
+      line-height: 1.55;
+    }
+    /* scanlines: a static overlay, cheap and honest. never animated. */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        to bottom, rgba(0, 0, 0, .22) 0 1px, transparent 1px 3px);
+      mix-blend-mode: multiply;
+    }
+    main { width: min(94vw, 88ch); }
+    p { margin: .35em 0; }
+    .ps1 { color: var(--ember); }
+    .cmd { color: var(--amber); }
+    .handle { color: var(--paper); }
+    .whale {
+      margin: 1.2em 0 0;
+      color: var(--ember);
+      font-size: clamp(9px, 1.5vw, 15px);
+      line-height: 1.2;
+      text-shadow: 0 0 8px rgba(222, 106, 65, .35);
+      overflow-x: auto;
+    }
+    h1 {
+      margin: .35em 0 .15em;
+      color: var(--amber);
+      font-size: clamp(30px, 6.2vw, 74px);
+      font-weight: 700;
+      letter-spacing: .01em;
+      line-height: 1.1;
+      text-shadow: var(--glow);
+      text-wrap: balance;
+    }
+    .sub { color: var(--dim); }
+    /* the ansi colors of a danish summer: the workshop deck's palette */
+    .ansi { line-height: 1; margin-top: .8em; }
+    .ansi i {
+      display: inline-block;
+      width: 1.1em;
+      height: 1.1em;
+      margin-right: .25em;
+      vertical-align: middle;
+    }
+    .ansi .lbl { color: var(--dim); margin-left: .4em; font-size: .8em; }
+    .hint { color: var(--paper); margin-top: 1em; }
+    .hint + .hint { margin-top: .2em; }
+    .hint::before { content: "→ "; color: var(--ember); }
+    #p1-msg { color: var(--amber); }
+    /* the blinking block cursor: the only thing on this screen that moves */
+    .cursor {
+      display: inline-block;
+      width: .6em;
+      height: 1.05em;
+      margin-left: .1em;
+      vertical-align: text-bottom;
+      background: var(--amber);
+      box-shadow: var(--glow);
+      animation: blink 1.1s steps(1) infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      .cursor { animation: none; }             /* steady cursor, still visible */
+    }
+    ::selection { background: var(--amber); color: var(--screen); }
+  </style>
 </head>
 <body>
-<main>
-  <h1>$ I was at BornHack 2026<span style="display:inline-block;width:0.5em;height:1em;background:#DE6A41;margin-left:0.15em;vertical-align:-0.1em;"></span></h1>
-  <p>docker for the curious — edit me: /usr/share/nginx/html/index.html</p>
-</main>
+  <main>
+    <p><span class="ps1">attendee@camp:~$</span> <span class="cmd">whoami</span></p>
+    <!-- ============================================================
+         EDIT ME: change the name on the next line, save with ^O,
+         exit with ^X, then reload the browser tab. that's the demo.
+         ============================================================ -->
+    <p class="handle">some curious hacker</p>
+    <p><span class="ps1">attendee@camp:~$</span> <span class="cmd">cat /etc/motd</span></p>
+    <pre class="whale" aria-hidden="true">
+                   ##         .
+             ## ## ##        ==
+          ## ## ## ##       ===
+      /"""""""""""""""""\___/ ===
+     {                      /  ===-
+      \______ O          __/
+        \    \        __/
+         \____\______/</pre>
+    <h1>I was at BornHack 2026</h1>
+    <p class="sub">docker for the curious · seven days in a tent on funen · host: gorm reventlow</p>
+    <p class="ansi" aria-hidden="true">
+      <i style="background:#242424"></i><i style="background:#51573B"></i><i
+        style="background:#6B7360"></i><i style="background:#8C8C7D"></i><i
+        style="background:#D0D0C8"></i><i style="background:#DE6A41"></i><span
+        class="lbl">the ansi colors of a danish summer</span>
+    </p>
+    <p class="hint">edit me: /usr/share/nginx/html/index.html</p>
+    <p class="hint">get in: docker exec -it camp bash, then nano this file</p>
+    <p id="p1-msg" hidden>phosphor swapped: P1 green engaged. enter the code again to revert.</p>
+    <p><span class="ps1">attendee@camp:~$</span> <span class="cursor"></span></p>
+  </main>
+  <!-- this page needs no javascript. the script below is pure dessert. -->
+  <script>
+    (function () {
+      "use strict";
+      var seq = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown",
+                 "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
+      var pos = 0;
+      document.addEventListener("keydown", function (e) {
+        pos = (e.key === seq[pos]) ? pos + 1 : (e.key === seq[0] ? 1 : 0);
+        if (pos === seq.length) {                /* full konami: swap the phosphor */
+          pos = 0;
+          var green = document.documentElement.classList.toggle("p1");
+          var msg = document.getElementById("p1-msg");
+          if (msg) { msg.hidden = !green; }
+        }
+      });
+      if (window.console && console.log) {
+        console.log("nothing up here. the real console is: docker exec -it camp bash");
+      }
+    }());
+  </script>
 </body>
+<!-- club-mate count while writing this file: 2. see you at the lightning talks. -->
 </html>
