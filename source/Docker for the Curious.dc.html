@@ -13,14 +13,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <style>
-  html, body { margin: 0; padding: 0; background: #BFBFB5; }
-  a { color: #DE6A41; } a:hover { color: #F05A0F; }
+  html, body { margin: 0; padding: 0; background: #f4f1e8; }
+  a { color: #a8763a; } a:hover { color: #8a5f2e; }
   :root {
     --type-title: 64px; --type-subtitle: 40px; --type-body: 30px; --type-small: 24px; --type-code: 26px;
     --pad-top: 90px; --pad-x: 110px; --gap-title: 44px; --gap-item: 26px;
-    --bg: #D0D0C8; --panel: #D9D9D2; --panel2: #C5C5BA; --line: #A9A99B;
-    --ink: #242424; --soft: #383835; --dim: #6B7360; --faint: #8C8C7D;
-    --green: #51573B; --amber: #DE6A41;
+    --bg: #f4f1e8; --panel: #faf8f0; --panel2: #eae6d9; --line: #c5c2b0;
+    --ink: #3a4433; --soft: #46503f; --dim: #818678; --faint: #979b8e;
+    --green: #6b8054; --amber: #a8763a;
     --mono: 'JetBrains Mono', ui-monospace, monospace;
     --sans: 'IBM Plex Sans', system-ui, sans-serif;
   }
@@ -30,7 +30,7 @@
 <x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%" data-uneditable="">
 
   <!-- ══════════ 1 · TITLE ══════════ -->
-  <section data-label="Title" data-screen-label="Title" style="background: var(--bg); color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
+  <section data-label="Title" data-screen-label="Title" style="background-color: var(--bg); background-image: linear-gradient(rgba(122,148,97,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(122,148,97,0.14) 1px, transparent 1px); background-size: 96px 96px; color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
     <div style="font: 500 26px var(--mono); color: var(--green); letter-spacing: 0.1em;">bornhack 2026 · workshop room · fri 17 jul · 15:00 – 17:00</div>
     <div style="margin-top: 120px;">
       <h1 style="margin: 0; font: 800 118px/1.08 var(--mono); letter-spacing: -0.02em; color: var(--ink);">Docker for<br>the Curious<span style="display: inline-block; width: 30px; height: 86px; background: var(--ink); margin-left: 22px; animation: blink 1.1s steps(1) infinite;"></span></h1>
@@ -39,9 +39,9 @@
     <div style="margin-top: auto; max-width: 760px;">
       <div style="background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;">
         <div style="display: flex; align-items: center; gap: 9px; padding: 12px 20px; background: var(--panel2); border-bottom: 1px solid var(--line);">
-          <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
-          <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
-          <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
+          <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
+          <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
+          <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
           <span style="margin-left: 10px; font: 500 24px var(--mono); color: var(--dim);">you@bornhack:~</span>
         </div>
         <pre style="margin: 0; padding: 24px 28px; font: 500 26px/1.8 var(--mono); color: var(--ink); white-space: pre-wrap;"><span style="color: var(--green);">$</span> whoami
@@ -52,13 +52,13 @@
   </section>
 
   <!-- ══════════ 2 · FORMAT ══════════ -->
-  <section data-label="Format" data-screen-label="How the next two hours work" style="background: var(--bg); color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
+  <section data-label="Format" data-screen-label="How the next two hours work" style="background-color: var(--bg); background-image: linear-gradient(rgba(122,148,97,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(122,148,97,0.14) 1px, transparent 1px); background-size: 96px 96px; color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
     <div style="font: 500 24px var(--mono); color: var(--green); letter-spacing: 0.1em;">## format</div>
     <h1 style="margin: 20px 0 0; font: 800 var(--type-title)/1.12 var(--mono); letter-spacing: -0.01em; color: var(--ink);">How the Next Two Hours Work</h1>
     <div style="margin-top: 64px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px;">
       <div style="background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 40px 36px;">
         <div style="font: 700 34px var(--mono); color: var(--green);">50 / 50</div>
-        <p style="margin: 22px 0 0; font: 400 29px/1.55 var(--sans); color: var(--soft);">Half explaining, half typing. When a slide has an amber <span style="font: 700 26px var(--mono); color: #242424; background: var(--amber); padding: 3px 12px; border-radius: 5px;">TASK</span> badge, it’s hands-on-keyboard time.</p>
+        <p style="margin: 22px 0 0; font: 400 29px/1.55 var(--sans); color: var(--soft);">Half explaining, half typing. When a slide has an amber <span style="font: 700 26px var(--mono); color: #3a4433; background: var(--amber); padding: 3px 12px; border-radius: 5px;">TASK</span> badge, it’s hands-on-keyboard time.</p>
       </div>
       <div style="background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 40px 36px;">
         <div style="font: 700 34px var(--mono); color: var(--green);">8 tasks</div>
@@ -74,7 +74,7 @@
   </section>
 
   <!-- ══════════ 3 · WHY ══════════ -->
-  <section data-label="Why" data-screen-label="Why containers exist" style="background: var(--bg); color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
+  <section data-label="Why" data-screen-label="Why containers exist" style="background-color: var(--bg); background-image: linear-gradient(rgba(122,148,97,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(122,148,97,0.14) 1px, transparent 1px); background-size: 96px 96px; color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
     <div style="font: 500 24px var(--mono); color: var(--green); letter-spacing: 0.1em;">## concepts</div>
     <h1 style="margin: 20px 0 0; font: 800 var(--type-title)/1.12 var(--mono); letter-spacing: -0.01em; color: var(--ink);">Why Containers Exist</h1>
     <div style="margin-top: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
@@ -101,7 +101,7 @@
   </section>
 
   <!-- ══════════ 4 · WHAT IS A CONTAINER ══════════ -->
-  <section data-label="Container" data-screen-label="What a container is" style="background: var(--bg); color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
+  <section data-label="Container" data-screen-label="What a container is" style="background-color: var(--bg); background-image: linear-gradient(rgba(122,148,97,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(122,148,97,0.14) 1px, transparent 1px); background-size: 96px 96px; color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
     <div style="font: 500 24px var(--mono); color: var(--green); letter-spacing: 0.1em;">## concepts</div>
     <h1 style="margin: 20px 0 0; font: 800 var(--type-title)/1.12 var(--mono); letter-spacing: -0.01em; color: var(--ink);">What a Container Is</h1>
     <p style="margin: 40px 0 0; font: 400 36px/1.5 var(--sans); color: var(--soft); max-width: 1400px;">A normal process on your machine — running inside its own sealed little world.</p>
@@ -124,21 +124,21 @@
   </section>
 
   <!-- ══════════ 5 · VMs ══════════ -->
-  <section data-label="VMs" data-screen-label="Containers vs virtual machines" style="background: var(--bg); color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
+  <section data-label="VMs" data-screen-label="Containers vs virtual machines" style="background-color: var(--bg); background-image: linear-gradient(rgba(122,148,97,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(122,148,97,0.14) 1px, transparent 1px); background-size: 96px 96px; color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
     <div style="font: 500 24px var(--mono); color: var(--green); letter-spacing: 0.1em;">## concepts</div>
     <h1 style="margin: 20px 0 0; font: 800 var(--type-title)/1.12 var(--mono); letter-spacing: -0.01em; color: var(--ink);">Containers vs. Virtual Machines</h1>
     <div style="margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px;">
       <div style="display: flex; flex-direction: column; gap: 12px;">
         <div style="font: 500 26px var(--mono); color: var(--dim); margin-bottom: 8px;">virtual machines</div>
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
-          <div style="border: 1px solid var(--green); background: rgba(81,87,59,0.07); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--ink);">app A</div>
-          <div style="border: 1px solid var(--green); background: rgba(81,87,59,0.07); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--ink);">app B</div>
-          <div style="border: 1px solid var(--green); background: rgba(81,87,59,0.07); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--ink);">app C</div>
+          <div style="border: 1px solid var(--green); background: rgba(107,128,84,0.12); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--ink);">app A</div>
+          <div style="border: 1px solid var(--green); background: rgba(107,128,84,0.12); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--ink);">app B</div>
+          <div style="border: 1px solid var(--green); background: rgba(107,128,84,0.12); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--ink);">app C</div>
         </div>
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
-          <div style="border: 1px solid var(--amber); background: rgba(222,106,65,0.08); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--amber);">guest OS</div>
-          <div style="border: 1px solid var(--amber); background: rgba(222,106,65,0.08); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--amber);">guest OS</div>
-          <div style="border: 1px solid var(--amber); background: rgba(222,106,65,0.08); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--amber);">guest OS</div>
+          <div style="border: 1px solid var(--amber); background: rgba(168,118,58,0.12); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--amber);">guest OS</div>
+          <div style="border: 1px solid var(--amber); background: rgba(168,118,58,0.12); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--amber);">guest OS</div>
+          <div style="border: 1px solid var(--amber); background: rgba(168,118,58,0.12); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--amber);">guest OS</div>
         </div>
         <div style="border: 1px solid var(--line); background: var(--panel2); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--dim);">hypervisor</div>
         <div style="border: 1px solid var(--line); background: var(--panel2); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--dim);">host OS</div>
@@ -147,12 +147,12 @@
       <div style="display: flex; flex-direction: column; gap: 12px;">
         <div style="font: 500 26px var(--mono); color: var(--dim); margin-bottom: 8px;">containers</div>
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
-          <div style="border: 1px solid var(--green); background: rgba(81,87,59,0.07); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--ink);">app A</div>
-          <div style="border: 1px solid var(--green); background: rgba(81,87,59,0.07); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--ink);">app B</div>
-          <div style="border: 1px solid var(--green); background: rgba(81,87,59,0.07); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--ink);">app C</div>
+          <div style="border: 1px solid var(--green); background: rgba(107,128,84,0.12); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--ink);">app A</div>
+          <div style="border: 1px solid var(--green); background: rgba(107,128,84,0.12); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--ink);">app B</div>
+          <div style="border: 1px solid var(--green); background: rgba(107,128,84,0.12); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--ink);">app C</div>
         </div>
         <div style="border: 1px solid var(--line); background: var(--panel2); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--dim);">docker engine</div>
-        <div style="border: 1px solid var(--green); background: rgba(81,87,59,0.10); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--green);">host OS — one shared kernel</div>
+        <div style="border: 1px solid var(--green); background: rgba(107,128,84,0.16); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--green);">host OS — one shared kernel</div>
         <div style="border: 1px solid var(--line); background: var(--panel2); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--dim);">hardware</div>
       </div>
     </div>
@@ -162,7 +162,7 @@
   </section>
 
   <!-- ══════════ 6 · IMAGE VS CONTAINER ══════════ -->
-  <section data-label="Image vs Container" data-screen-label="Image vs container" style="background: var(--bg); color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
+  <section data-label="Image vs Container" data-screen-label="Image vs container" style="background-color: var(--bg); background-image: linear-gradient(rgba(122,148,97,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(122,148,97,0.14) 1px, transparent 1px); background-size: 96px 96px; color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
     <div style="font: 500 24px var(--mono); color: var(--green); letter-spacing: 0.1em;">## concepts</div>
     <h1 style="margin: 20px 0 0; font: 800 var(--type-title)/1.12 var(--mono); letter-spacing: -0.01em; color: var(--ink);">Image vs. Container</h1>
     <div style="margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
@@ -186,7 +186,7 @@
       </div>
     </div>
     <div style="margin-top: 52px; display: flex; align-items: center; gap: 28px; justify-content: center;">
-      <div style="border: 1px solid var(--green); background: rgba(81,87,59,0.07); border-radius: 10px; padding: 20px 34px; font: 500 26px var(--mono); color: var(--ink);">image: bornhack2026</div>
+      <div style="border: 1px solid var(--green); background: rgba(107,128,84,0.12); border-radius: 10px; padding: 20px 34px; font: 500 26px var(--mono); color: var(--ink);">image: bornhack2026</div>
       <div style="font: 500 30px var(--mono); color: var(--dim);">→</div>
       <div style="border: 1px solid var(--line); background: var(--panel2); border-radius: 10px; padding: 20px 28px; font: 500 26px var(--mono); color: var(--soft);">container: camp</div>
       <div style="border: 1px solid var(--line); background: var(--panel2); border-radius: 10px; padding: 20px 28px; font: 500 26px var(--mono); color: var(--soft);">container: camp2</div>
@@ -197,17 +197,17 @@
   </section>
 
   <!-- ══════════ 7 · PIPELINE ══════════ -->
-  <section data-label="Pipeline" data-screen-label="Where images come from" style="background: var(--bg); color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
+  <section data-label="Pipeline" data-screen-label="Where images come from" style="background-color: var(--bg); background-image: linear-gradient(rgba(122,148,97,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(122,148,97,0.14) 1px, transparent 1px); background-size: 96px 96px; color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
     <div style="font: 500 24px var(--mono); color: var(--green); letter-spacing: 0.1em;">## concepts</div>
     <h1 style="margin: 20px 0 0; font: 800 var(--type-title)/1.12 var(--mono); letter-spacing: -0.01em; color: var(--ink);">Where Images Come From</h1>
     <div style="margin-top: 96px; display: flex; align-items: center; justify-content: space-between; gap: 8px;">
       <div style="border: 1px solid var(--line); background: var(--panel); border-radius: 12px; padding: 30px 30px; font: 500 27px var(--mono); color: var(--soft); text-align: center;">Dockerfile</div>
       <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1;"><span style="font: 700 24px var(--mono); color: var(--green);">build</span><span style="font: 500 28px var(--mono); color: var(--dim); letter-spacing: -0.06em;">→—→</span></div>
-      <div style="border: 1px solid var(--green); background: rgba(81,87,59,0.07); border-radius: 12px; padding: 30px 30px; font: 500 27px var(--mono); color: var(--ink); text-align: center;">image</div>
+      <div style="border: 1px solid var(--green); background: rgba(107,128,84,0.12); border-radius: 12px; padding: 30px 30px; font: 500 27px var(--mono); color: var(--ink); text-align: center;">image</div>
       <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1;"><span style="font: 700 24px var(--mono); color: var(--green);">push</span><span style="font: 500 28px var(--mono); color: var(--dim); letter-spacing: -0.06em;">→—→</span></div>
-      <div style="border: 1px solid var(--amber); background: rgba(222,106,65,0.08); border-radius: 12px; padding: 30px 30px; font: 500 27px var(--mono); color: var(--amber); text-align: center;">Docker Hub<div style="font: 400 24px var(--mono); color: var(--dim); margin-top: 6px;">the registry</div></div>
+      <div style="border: 1px solid var(--amber); background: rgba(168,118,58,0.12); border-radius: 12px; padding: 30px 30px; font: 500 27px var(--mono); color: var(--amber); text-align: center;">Docker Hub<div style="font: 400 24px var(--mono); color: var(--dim); margin-top: 6px;">the registry</div></div>
       <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1;"><span style="font: 700 24px var(--mono); color: var(--green);">pull</span><span style="font: 500 28px var(--mono); color: var(--dim); letter-spacing: -0.06em;">→—→</span></div>
-      <div style="border: 1px solid var(--green); background: rgba(81,87,59,0.07); border-radius: 12px; padding: 30px 30px; font: 500 27px var(--mono); color: var(--ink); text-align: center;">image</div>
+      <div style="border: 1px solid var(--green); background: rgba(107,128,84,0.12); border-radius: 12px; padding: 30px 30px; font: 500 27px var(--mono); color: var(--ink); text-align: center;">image</div>
       <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1;"><span style="font: 700 24px var(--mono); color: var(--green);">run</span><span style="font: 500 28px var(--mono); color: var(--dim); letter-spacing: -0.06em;">→—→</span></div>
       <div style="border: 1px solid var(--line); background: var(--panel); border-radius: 12px; padding: 30px 30px; font: 500 27px var(--mono); color: var(--soft); text-align: center;">container</div>
     </div>
@@ -225,13 +225,13 @@
   </section>
 
   <!-- ══════════ 8 · TASK 0 INSTALL ══════════ -->
-  <section data-label="Task 0 Install" data-screen-label="Task 0 install docker" style="background: var(--bg); color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: 80px var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
+  <section data-label="Task 0 Install" data-screen-label="Task 0 install docker" style="background-color: var(--bg); background-image: linear-gradient(rgba(122,148,97,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(122,148,97,0.14) 1px, transparent 1px); background-size: 96px 96px; color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: 80px var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
     <div style="display: flex; align-items: center; gap: 22px;">
-      <span style="font: 700 26px var(--mono); color: #242424; background: var(--amber); padding: 8px 18px; border-radius: 6px; letter-spacing: 0.06em;">TASK 0</span>
+      <span style="font: 700 26px var(--mono); color: #3a4433; background: var(--amber); padding: 8px 18px; border-radius: 6px; letter-spacing: 0.06em;">TASK 0</span>
       <span style="font: 500 24px var(--mono); color: var(--amber); letter-spacing: 0.08em;">hands-on — everyone</span>
     </div>
     <h1 style="margin: 18px 0 0; font: 800 var(--type-title)/1.12 var(--mono); letter-spacing: -0.01em; color: var(--ink);">Install Docker</h1>
-    <div style="margin-top: 28px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px 28px; font: 500 25px/1.6 var(--mono); color: var(--ink);"><span style="color: var(--green);">$</span> docker --version   <span style="color: #6B7360;"># already prints a version? skip the install — jump straight to hello-world</span></div>
+    <div style="margin-top: 28px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px 28px; font: 500 25px/1.6 var(--mono); color: var(--ink);"><span style="color: var(--green);">$</span> docker --version   <span style="color: #818678;"># already prints a version? skip the install — jump straight to hello-world</span></div>
     <div style="margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;">
       <div style="background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;">
         <div style="padding: 12px 20px; background: var(--panel2); border-bottom: 1px solid var(--line); font: 500 24px var(--mono); color: var(--green);">debian / ubuntu</div>
@@ -248,23 +248,23 @@
     </div>
     <div style="margin-top: 24px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;">
       <div style="display: flex; align-items: center; gap: 9px; padding: 12px 20px; background: var(--panel2); border-bottom: 1px solid var(--line);">
-        <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
-        <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
-        <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
+        <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
+        <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
+        <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
         <span style="margin-left: 10px; font: 500 24px var(--mono); color: var(--dim);">then, everyone:</span>
       </div>
       <pre style="margin: 0; padding: 24px 28px; font: 500 25px/1.8 var(--mono); color: var(--ink); white-space: pre-wrap;"><span style="color: var(--green);">$</span> sudo systemctl enable --now docker
-<span style="color: var(--green);">$</span> sudo usermod -aG docker $USER   <span style="color: #6B7360;"># then log out &amp; back in — no more sudo
-</span><span style="color: var(--green);">$</span> docker run hello-world          <span style="color: #6B7360;"># prints a greeting = you’re ready</span></pre>
+<span style="color: var(--green);">$</span> sudo usermod -aG docker $USER   <span style="color: #818678;"># then log out &amp; back in — no more sudo
+</span><span style="color: var(--green);">$</span> docker run hello-world          <span style="color: #818678;"># prints a greeting = you’re ready</span></pre>
     </div>
     <div style="margin-top: 20px; font: 500 25px/1.7 var(--mono); color: var(--dim);"># macOS / windows: install Docker Desktop, rejoin at task 1 · skipped usermod? prefix docker commands with sudo</div>
     <div style="margin-top: auto; display: flex; justify-content: space-between; font: 500 24px var(--mono); color: var(--faint);"><span>$ docker for the curious</span><span>bornhack 2026</span></div>
   </section>
 
   <!-- ══════════ 9 · TASK 1 RUN ══════════ -->
-  <section data-label="Task 1 Run" data-screen-label="Task 1 run a container" style="background: var(--bg); color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: 80px var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
+  <section data-label="Task 1 Run" data-screen-label="Task 1 run a container" style="background-color: var(--bg); background-image: linear-gradient(rgba(122,148,97,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(122,148,97,0.14) 1px, transparent 1px); background-size: 96px 96px; color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: 80px var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
     <div style="display: flex; align-items: center; gap: 22px;">
-      <span style="font: 700 26px var(--mono); color: #242424; background: var(--amber); padding: 8px 18px; border-radius: 6px; letter-spacing: 0.06em;">TASK 1</span>
+      <span style="font: 700 26px var(--mono); color: #3a4433; background: var(--amber); padding: 8px 18px; border-radius: 6px; letter-spacing: 0.06em;">TASK 1</span>
       <span style="font: 500 24px var(--mono); color: var(--amber); letter-spacing: 0.08em;">hands-on</span>
     </div>
     <h1 style="margin: 18px 0 0; font: 800 var(--type-title)/1.12 var(--mono); letter-spacing: -0.01em; color: var(--ink);">Run Somebody Else’s Container</h1>
@@ -272,15 +272,15 @@
       <div style="display: flex; flex-direction: column; gap: 24px;">
         <div style="background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;">
           <div style="display: flex; align-items: center; gap: 9px; padding: 12px 20px; background: var(--panel2); border-bottom: 1px solid var(--line);">
-            <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
-            <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
-            <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
+            <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
+            <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
+            <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
             <span style="margin-left: 10px; font: 500 24px var(--mono); color: var(--dim);">you@laptop:~</span>
           </div>
           <pre style="margin: 0; padding: 26px 30px; font: 500 26px/1.85 var(--mono); color: var(--ink); white-space: pre-wrap;"><span style="color: var(--green);">$</span> docker run -d -p 8080:80 --name camp elohite/bornhack2026
-<span style="color: #5E6349;">Unable to find image locally…
+<span style="color: #7a9461;">Unable to find image locally…
 Pulling from elohite/bornhack2026
-9f2a01c4b7de…   </span><span style="color: #6B7360;"># your new container’s id</span></pre>
+9f2a01c4b7de…   </span><span style="color: #818678;"># your new container’s id</span></pre>
         </div>
         <div style="background: var(--panel); border: 1px solid var(--green); border-radius: 12px; padding: 26px 30px; display: flex; align-items: center; gap: 24px;">
           <span style="font: 700 26px var(--mono); color: var(--green);">→</span>
@@ -302,7 +302,7 @@ Pulling from elohite/bornhack2026
   </section>
 
   <!-- ══════════ 10 · CORE LOOP ══════════ -->
-  <section data-label="Core Loop" data-screen-label="The core loop" style="background: var(--bg); color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
+  <section data-label="Core Loop" data-screen-label="The core loop" style="background-color: var(--bg); background-image: linear-gradient(rgba(122,148,97,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(122,148,97,0.14) 1px, transparent 1px); background-size: 96px 96px; color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
     <div style="font: 500 24px var(--mono); color: var(--green); letter-spacing: 0.1em;">## reference — type along</div>
     <h1 style="margin: 20px 0 0; font: 800 var(--type-title)/1.12 var(--mono); letter-spacing: -0.01em; color: var(--ink);">The Core Loop</h1>
     <p style="margin: 36px 0 0; font: 400 32px/1.5 var(--sans); color: var(--soft);">Run each one now. Watch what changes.</p>
@@ -337,25 +337,25 @@ Pulling from elohite/bornhack2026
   </section>
 
   <!-- ══════════ 11 · TASK 2 INSIDE ══════════ -->
-  <section data-label="Task 2 Inside" data-screen-label="Task 2 look inside" style="background: var(--bg); color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: 80px var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
+  <section data-label="Task 2 Inside" data-screen-label="Task 2 look inside" style="background-color: var(--bg); background-image: linear-gradient(rgba(122,148,97,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(122,148,97,0.14) 1px, transparent 1px); background-size: 96px 96px; color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: 80px var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
     <div style="display: flex; align-items: center; gap: 22px;">
-      <span style="font: 700 26px var(--mono); color: #242424; background: var(--amber); padding: 8px 18px; border-radius: 6px; letter-spacing: 0.06em;">TASK 2</span>
+      <span style="font: 700 26px var(--mono); color: #3a4433; background: var(--amber); padding: 8px 18px; border-radius: 6px; letter-spacing: 0.06em;">TASK 2</span>
       <span style="font: 500 24px var(--mono); color: var(--amber); letter-spacing: 0.08em;">hands-on</span>
     </div>
     <h1 style="margin: 18px 0 0; font: 800 var(--type-title)/1.12 var(--mono); letter-spacing: -0.01em; color: var(--ink);">Look Inside</h1>
     <div style="margin-top: 44px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 44px; align-items: start;">
       <div style="background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;">
         <div style="display: flex; align-items: center; gap: 9px; padding: 12px 20px; background: var(--panel2); border-bottom: 1px solid var(--line);">
-          <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
-          <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
-          <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
+          <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
+          <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
+          <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
           <span style="margin-left: 10px; font: 500 24px var(--mono); color: var(--dim);">you@laptop:~</span>
         </div>
         <pre style="margin: 0; padding: 26px 30px; font: 500 26px/1.85 var(--mono); color: var(--ink); white-space: pre-wrap;"><span style="color: var(--green);">$</span> docker exec -it camp bash
 <span style="color: var(--amber);">root@9f2a01c4b7de</span>:/# ls /usr/share/nginx/html
-<span style="color: #5E6349;">index.html
+<span style="color: #7a9461;">index.html
 </span><span style="color: var(--amber);">root@9f2a01c4b7de</span>:/# nano /usr/share/nginx/html/index.html
-<span style="color: #6B7360;"># change the text · ctrl-o = save · ctrl-x = quit
+<span style="color: #818678;"># change the text · ctrl-o = save · ctrl-x = quit
 </span><span style="color: var(--amber);">root@9f2a01c4b7de</span>:/# exit</pre>
       </div>
       <div style="display: flex; flex-direction: column; gap: 28px;">
@@ -369,9 +369,9 @@ Pulling from elohite/bornhack2026
   </section>
 
   <!-- ══════════ 12 · TASK 3 RERUN ══════════ -->
-  <section data-label="Task 3 Rerun" data-screen-label="Task 3 delete and run again" style="background: var(--bg); color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: 80px var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
+  <section data-label="Task 3 Rerun" data-screen-label="Task 3 delete and run again" style="background-color: var(--bg); background-image: linear-gradient(rgba(122,148,97,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(122,148,97,0.14) 1px, transparent 1px); background-size: 96px 96px; color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: 80px var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
     <div style="display: flex; align-items: center; gap: 22px;">
-      <span style="font: 700 26px var(--mono); color: #242424; background: var(--amber); padding: 8px 18px; border-radius: 6px; letter-spacing: 0.06em;">TASK 3</span>
+      <span style="font: 700 26px var(--mono); color: #3a4433; background: var(--amber); padding: 8px 18px; border-radius: 6px; letter-spacing: 0.06em;">TASK 3</span>
       <span style="font: 500 24px var(--mono); color: var(--amber); letter-spacing: 0.08em;">hands-on</span>
     </div>
     <h1 style="margin: 18px 0 0; font: 800 var(--type-title)/1.12 var(--mono); letter-spacing: -0.01em; color: var(--ink);">Delete It and Run It Again</h1>
@@ -379,9 +379,9 @@ Pulling from elohite/bornhack2026
       <div style="display: flex; flex-direction: column; gap: 24px;">
         <div style="background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;">
           <div style="display: flex; align-items: center; gap: 9px; padding: 12px 20px; background: var(--panel2); border-bottom: 1px solid var(--line);">
-            <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
-            <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
-            <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
+            <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
+            <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
+            <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
             <span style="margin-left: 10px; font: 500 24px var(--mono); color: var(--dim);">you@laptop:~</span>
           </div>
           <pre style="margin: 0; padding: 26px 30px; font: 500 26px/1.85 var(--mono); color: var(--ink); white-space: pre-wrap;"><span style="color: var(--green);">$</span> docker rm -f camp
@@ -412,7 +412,7 @@ Pulling from elohite/bornhack2026
   </section>
 
   <!-- ══════════ 13 · EPHEMERAL ══════════ -->
-  <section data-label="Ephemeral" data-screen-label="Ephemeral by design" style="background: var(--bg); color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
+  <section data-label="Ephemeral" data-screen-label="Ephemeral by design" style="background-color: var(--bg); background-image: linear-gradient(rgba(122,148,97,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(122,148,97,0.14) 1px, transparent 1px); background-size: 96px 96px; color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
     <div style="font: 500 24px var(--mono); color: var(--green); letter-spacing: 0.1em;">## the mental model</div>
     <h1 style="margin: 20px 0 0; font: 800 var(--type-title)/1.12 var(--mono); letter-spacing: -0.01em; color: var(--ink);">Ephemeral by Design</h1>
     <div style="margin-top: 72px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px;">
@@ -433,9 +433,9 @@ Pulling from elohite/bornhack2026
   </section>
 
   <!-- ══════════ 14 · TASK 4 COMPOSE ══════════ -->
-  <section data-label="Task 4 Compose" data-screen-label="Task 4 compose" style="background: var(--bg); color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: 80px var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
+  <section data-label="Task 4 Compose" data-screen-label="Task 4 compose" style="background-color: var(--bg); background-image: linear-gradient(rgba(122,148,97,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(122,148,97,0.14) 1px, transparent 1px); background-size: 96px 96px; color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: 80px var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
     <div style="display: flex; align-items: center; gap: 22px;">
-      <span style="font: 700 26px var(--mono); color: #242424; background: var(--amber); padding: 8px 18px; border-radius: 6px; letter-spacing: 0.06em;">TASK 4</span>
+      <span style="font: 700 26px var(--mono); color: #3a4433; background: var(--amber); padding: 8px 18px; border-radius: 6px; letter-spacing: 0.06em;">TASK 4</span>
       <span style="font: 500 24px var(--mono); color: var(--amber); letter-spacing: 0.08em;">hands-on</span>
     </div>
     <h1 style="margin: 18px 0 0; font: 800 var(--type-title)/1.12 var(--mono); letter-spacing: -0.01em; color: var(--ink);">The Same Thing, as a File</h1>
@@ -451,9 +451,9 @@ Pulling from elohite/bornhack2026
         </div>
         <div style="background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;">
           <div style="display: flex; align-items: center; gap: 9px; padding: 12px 20px; background: var(--panel2); border-bottom: 1px solid var(--line);">
-            <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
-            <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
-            <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
+            <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
+            <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
+            <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
             <span style="margin-left: 10px; font: 500 24px var(--mono); color: var(--dim);">you@laptop:~</span>
           </div>
           <pre style="margin: 0; padding: 24px 30px; font: 500 26px/1.8 var(--mono); color: var(--ink); white-space: pre-wrap;"><span style="color: var(--green);">$</span> mkdir camp &amp;&amp; cd camp
@@ -476,9 +476,9 @@ Pulling from elohite/bornhack2026
   </section>
 
   <!-- ══════════ 15 · TASK 5 VOLUME ══════════ -->
-  <section data-label="Task 5 Volume" data-screen-label="Task 5 mount a volume" style="background: var(--bg); color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: 80px var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
+  <section data-label="Task 5 Volume" data-screen-label="Task 5 mount a volume" style="background-color: var(--bg); background-image: linear-gradient(rgba(122,148,97,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(122,148,97,0.14) 1px, transparent 1px); background-size: 96px 96px; color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: 80px var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
     <div style="display: flex; align-items: center; gap: 22px;">
-      <span style="font: 700 26px var(--mono); color: #242424; background: var(--amber); padding: 8px 18px; border-radius: 6px; letter-spacing: 0.06em;">TASK 5</span>
+      <span style="font: 700 26px var(--mono); color: #3a4433; background: var(--amber); padding: 8px 18px; border-radius: 6px; letter-spacing: 0.06em;">TASK 5</span>
       <span style="font: 500 24px var(--mono); color: var(--amber); letter-spacing: 0.08em;">hands-on</span>
     </div>
     <h1 style="margin: 18px 0 0; font: 800 var(--type-title)/1.12 var(--mono); letter-spacing: -0.01em; color: var(--ink);">Mount a Volume</h1>
@@ -496,16 +496,16 @@ Pulling from elohite/bornhack2026
         </div>
         <div style="background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;">
           <div style="display: flex; align-items: center; gap: 9px; padding: 12px 20px; background: var(--panel2); border-bottom: 1px solid var(--line);">
-            <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
-            <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
-            <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
+            <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
+            <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
+            <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
             <span style="margin-left: 10px; font: 500 24px var(--mono); color: var(--dim);">you@laptop:~/camp</span>
           </div>
           <pre style="margin: 0; padding: 24px 30px; font: 500 25px/1.6 var(--mono); color: var(--ink); white-space: pre-wrap;"><span style="color: var(--green);">$</span> mkdir html
-<span style="color: var(--green);">$</span> nano html/index.html   <span style="color: #6B7360;"># write anything
+<span style="color: var(--green);">$</span> nano html/index.html   <span style="color: #818678;"># write anything
 </span><span style="color: var(--green);">$</span> docker compose up -d
 <span style="color: var(--green);">$</span> docker compose down &amp;&amp; docker compose up -d
-<span style="color: #6B7360;"># refresh — your page survived</span></pre>
+<span style="color: #818678;"># refresh — your page survived</span></pre>
         </div>
       </div>
       <div style="display: flex; flex-direction: column; gap: 30px;">
@@ -528,7 +528,7 @@ Pulling from elohite/bornhack2026
   </section>
 
   <!-- ══════════ 16 · TWO SERVICES ══════════ -->
-  <section data-label="Two Services" data-screen-label="Two services one file" style="background: var(--bg); color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: 80px var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
+  <section data-label="Two Services" data-screen-label="Two services one file" style="background-color: var(--bg); background-image: linear-gradient(rgba(122,148,97,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(122,148,97,0.14) 1px, transparent 1px); background-size: 96px 96px; color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: 80px var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
     <div style="font: 500 24px var(--mono); color: var(--green); letter-spacing: 0.1em;">## demo — watch this one (big download)</div>
     <h1 style="margin: 20px 0 0; font: 800 var(--type-title)/1.12 var(--mono); letter-spacing: -0.01em; color: var(--ink);">Two Services, One File</h1>
     <div style="margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: start;">
@@ -563,9 +563,9 @@ Pulling from elohite/bornhack2026
   </section>
 
   <!-- ══════════ 17 · TASK 6 BUILD ══════════ -->
-  <section data-label="Task 6 Build" data-screen-label="Task 6 build your own image" style="background: var(--bg); color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: 80px var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
+  <section data-label="Task 6 Build" data-screen-label="Task 6 build your own image" style="background-color: var(--bg); background-image: linear-gradient(rgba(122,148,97,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(122,148,97,0.14) 1px, transparent 1px); background-size: 96px 96px; color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: 80px var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
     <div style="display: flex; align-items: center; gap: 22px;">
-      <span style="font: 700 26px var(--mono); color: #242424; background: var(--amber); padding: 8px 18px; border-radius: 6px; letter-spacing: 0.06em;">TASK 6</span>
+      <span style="font: 700 26px var(--mono); color: #3a4433; background: var(--amber); padding: 8px 18px; border-radius: 6px; letter-spacing: 0.06em;">TASK 6</span>
       <span style="font: 500 24px var(--mono); color: var(--amber); letter-spacing: 0.08em;">hands-on</span>
     </div>
     <h1 style="margin: 18px 0 0; font: 800 var(--type-title)/1.12 var(--mono); letter-spacing: -0.01em; color: var(--ink);">Build Your Own Image</h1>
@@ -582,9 +582,9 @@ Pulling from elohite/bornhack2026
         </div>
         <div style="background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;">
           <div style="display: flex; align-items: center; gap: 9px; padding: 12px 20px; background: var(--panel2); border-bottom: 1px solid var(--line);">
-            <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
-            <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
-            <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
+            <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
+            <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
+            <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
             <span style="margin-left: 10px; font: 500 24px var(--mono); color: var(--dim);">you@laptop:~/mysite</span>
           </div>
           <pre style="margin: 0; padding: 20px 28px; font: 500 25px/1.75 var(--mono); color: var(--ink); white-space: pre-wrap;"><span style="color: var(--green);">$</span> docker build -t <span style="color: var(--amber);">YOU</span>/iwasat:1.0 .
@@ -607,9 +607,9 @@ Pulling from elohite/bornhack2026
   </section>
 
   <!-- ══════════ 18 · TASK 7 PUSH ══════════ -->
-  <section data-label="Task 7 Push" data-screen-label="Task 7 push to docker hub" style="background: var(--bg); color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: 80px var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
+  <section data-label="Task 7 Push" data-screen-label="Task 7 push to docker hub" style="background-color: var(--bg); background-image: linear-gradient(rgba(122,148,97,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(122,148,97,0.14) 1px, transparent 1px); background-size: 96px 96px; color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: 80px var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
     <div style="display: flex; align-items: center; gap: 22px;">
-      <span style="font: 700 26px var(--mono); color: #242424; background: var(--amber); padding: 8px 18px; border-radius: 6px; letter-spacing: 0.06em;">TASK 7</span>
+      <span style="font: 700 26px var(--mono); color: #3a4433; background: var(--amber); padding: 8px 18px; border-radius: 6px; letter-spacing: 0.06em;">TASK 7</span>
       <span style="font: 500 24px var(--mono); color: var(--amber); letter-spacing: 0.08em;">hands-on — the payoff</span>
     </div>
     <h1 style="margin: 18px 0 0; font: 800 var(--type-title)/1.12 var(--mono); letter-spacing: -0.01em; color: var(--ink);">Push It to Docker Hub</h1>
@@ -617,19 +617,19 @@ Pulling from elohite/bornhack2026
       <div style="display: flex; flex-direction: column; gap: 24px;">
         <div style="background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;">
           <div style="display: flex; align-items: center; gap: 9px; padding: 12px 20px; background: var(--panel2); border-bottom: 1px solid var(--line);">
-            <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
-            <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
-            <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
+            <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
+            <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
+            <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
             <span style="margin-left: 10px; font: 500 24px var(--mono); color: var(--dim);">you@laptop:~/mysite</span>
           </div>
-          <pre style="margin: 0; padding: 26px 30px; font: 500 26px/1.85 var(--mono); color: var(--ink); white-space: pre-wrap;"><span style="color: var(--green);">$</span> docker login    <span style="color: #6B7360;"># free account: hub.docker.com
+          <pre style="margin: 0; padding: 26px 30px; font: 500 26px/1.85 var(--mono); color: var(--ink); white-space: pre-wrap;"><span style="color: var(--green);">$</span> docker login    <span style="color: #818678;"># free account: hub.docker.com
 </span><span style="color: var(--green);">$</span> docker push <span style="color: var(--amber);">YOU</span>/iwasat:1.0</pre>
         </div>
         <div style="background: var(--panel); border: 1px solid var(--green); border-radius: 12px; overflow: hidden;">
           <div style="display: flex; align-items: center; gap: 9px; padding: 12px 20px; background: var(--panel2); border-bottom: 1px solid var(--line);">
-            <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
-            <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
-            <span style="width: 13px; height: 13px; border-radius: 50%; background: #A8A89A;"></span>
+            <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
+            <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
+            <span style="width: 13px; height: 13px; border-radius: 50%; background: #b9baae;"></span>
             <span style="margin-left: 10px; font: 500 24px var(--mono); color: var(--green);">now run your neighbor’s:</span>
           </div>
           <pre style="margin: 0; padding: 26px 30px; font: 500 26px/1.85 var(--mono); color: var(--ink); white-space: pre-wrap;"><span style="color: var(--green);">$</span> docker run -d -p 8083:80 <span style="color: var(--amber);">NEIGHBOR</span>/iwasat:1.0</pre>
@@ -645,7 +645,7 @@ Pulling from elohite/bornhack2026
   </section>
 
   <!-- ══════════ 19 · RECAP ══════════ -->
-  <section data-label="Recap" data-screen-label="The vocabulary you came for" style="background: var(--bg); color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
+  <section data-label="Recap" data-screen-label="The vocabulary you came for" style="background-color: var(--bg); background-image: linear-gradient(rgba(122,148,97,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(122,148,97,0.14) 1px, transparent 1px); background-size: 96px 96px; color: var(--ink); font-family: var(--sans); display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) 44px; box-sizing: border-box; overflow: hidden;">
     <div style="font: 500 24px var(--mono); color: var(--green); letter-spacing: 0.1em;">## you made it</div>
     <h1 style="margin: 20px 0 0; font: 800 var(--type-title)/1.12 var(--mono); letter-spacing: -0.01em; color: var(--ink);">The Vocabulary You Came For</h1>
     <div style="margin-top: 52px; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 22px;">
@@ -691,7 +691,7 @@ Pulling from elohite/bornhack2026
 
 
 <template id="__bundler_thumbnail">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#D0D0C8"></rect><text x="32" y="60" font-family="monospace" font-size="24" font-weight="700" fill="#242424">$</text><text x="50" y="60" font-family="monospace" font-size="24" font-weight="700" fill="#DE6A41">_</text></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#f4f1e8"></rect><text x="32" y="60" font-family="monospace" font-size="24" font-weight="700" fill="#3a4433">$</text><text x="50" y="60" font-family="monospace" font-size="24" font-weight="700" fill="#a8763a">_</text></svg>
 </template></x-dc>
 </body>
 </html>
