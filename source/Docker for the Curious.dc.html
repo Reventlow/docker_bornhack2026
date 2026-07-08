@@ -14,13 +14,13 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <style>
   html, body { margin: 0; padding: 0; background: #f4f1e8; }
-  a { color: #a8763a; } a:hover { color: #8a5f2e; }
+  a { color: #DE6A41; } a:hover { color: #F05A0F; }
   :root {
     --type-title: 64px; --type-subtitle: 40px; --type-body: 30px; --type-small: 24px; --type-code: 26px;
     --pad-top: 90px; --pad-x: 110px; --gap-title: 44px; --gap-item: 26px;
     --bg: #f4f1e8; --panel: #faf8f0; --panel2: #eae6d9; --line: #c5c2b0;
     --ink: #3a4433; --soft: #46503f; --dim: #818678; --faint: #979b8e;
-    --green: #6b8054; --amber: #a8763a;
+    --green: #6b8054; --amber: #DE6A41;
     --mono: 'JetBrains Mono', ui-monospace, monospace;
     --sans: 'IBM Plex Sans', system-ui, sans-serif;
   }
@@ -136,9 +136,9 @@
           <div style="border: 1px solid var(--green); background: rgba(107,128,84,0.12); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--ink);">app C</div>
         </div>
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
-          <div style="border: 1px solid var(--amber); background: rgba(168,118,58,0.12); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--amber);">guest OS</div>
-          <div style="border: 1px solid var(--amber); background: rgba(168,118,58,0.12); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--amber);">guest OS</div>
-          <div style="border: 1px solid var(--amber); background: rgba(168,118,58,0.12); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--amber);">guest OS</div>
+          <div style="border: 1px solid var(--amber); background: rgba(222,106,65,0.08); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--amber);">guest OS</div>
+          <div style="border: 1px solid var(--amber); background: rgba(222,106,65,0.08); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--amber);">guest OS</div>
+          <div style="border: 1px solid var(--amber); background: rgba(222,106,65,0.08); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--amber);">guest OS</div>
         </div>
         <div style="border: 1px solid var(--line); background: var(--panel2); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--dim);">hypervisor</div>
         <div style="border: 1px solid var(--line); background: var(--panel2); border-radius: 10px; padding: 18px 10px; text-align: center; font: 500 25px var(--mono); color: var(--dim);">host OS</div>
@@ -205,7 +205,7 @@
       <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1;"><span style="font: 700 24px var(--mono); color: var(--green);">build</span><span style="font: 500 28px var(--mono); color: var(--dim); letter-spacing: -0.06em;">→—→</span></div>
       <div style="border: 1px solid var(--green); background: rgba(107,128,84,0.12); border-radius: 12px; padding: 30px 30px; font: 500 27px var(--mono); color: var(--ink); text-align: center;">image</div>
       <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1;"><span style="font: 700 24px var(--mono); color: var(--green);">push</span><span style="font: 500 28px var(--mono); color: var(--dim); letter-spacing: -0.06em;">→—→</span></div>
-      <div style="border: 1px solid var(--amber); background: rgba(168,118,58,0.12); border-radius: 12px; padding: 30px 30px; font: 500 27px var(--mono); color: var(--amber); text-align: center;">Docker Hub<div style="font: 400 24px var(--mono); color: var(--dim); margin-top: 6px;">the registry</div></div>
+      <div style="border: 1px solid var(--amber); background: rgba(222,106,65,0.08); border-radius: 12px; padding: 30px 30px; font: 500 27px var(--mono); color: var(--amber); text-align: center;">Docker Hub<div style="font: 400 24px var(--mono); color: var(--dim); margin-top: 6px;">the registry</div></div>
       <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1;"><span style="font: 700 24px var(--mono); color: var(--green);">pull</span><span style="font: 500 28px var(--mono); color: var(--dim); letter-spacing: -0.06em;">→—→</span></div>
       <div style="border: 1px solid var(--green); background: rgba(107,128,84,0.12); border-radius: 12px; padding: 30px 30px; font: 500 27px var(--mono); color: var(--ink); text-align: center;">image</div>
       <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1;"><span style="font: 700 24px var(--mono); color: var(--green);">run</span><span style="font: 500 28px var(--mono); color: var(--dim); letter-spacing: -0.06em;">→—→</span></div>
@@ -691,7 +691,7 @@ Pulling from elohite/bornhack2026
 
 
 <template id="__bundler_thumbnail">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#f4f1e8"></rect><text x="32" y="60" font-family="monospace" font-size="24" font-weight="700" fill="#3a4433">$</text><text x="50" y="60" font-family="monospace" font-size="24" font-weight="700" fill="#a8763a">_</text></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#f4f1e8"></rect><text x="32" y="60" font-family="monospace" font-size="24" font-weight="700" fill="#3a4433">$</text><text x="50" y="60" font-family="monospace" font-size="24" font-weight="700" fill="#DE6A41">_</text></svg>
 </template></x-dc>
 </body>
 </html>

@@ -39,13 +39,19 @@ COLOR_MAP = {
     # greens
     "#51573B": "#6b8054",   # --green -> dim matcha
     "#5E6349": "#7a9461",   # lighter olive text -> bright matcha
-    # amber/orange accent -> golden milk tea (as in the NIS2 light theme)
-    "#DE6A41": "#a8763a",
-    "#F05A0F": "#8a5f2e",   # link hover
+    # amber/orange task accent stays the original strong orange (#DE6A41):
+    # Gorm prefers it loud for the hands-on task beats, and it holds up
+    # on cream. Links/hover (#F05A0F) and tints stay original too.
     # translucent tints
     "rgba(81,87,59,0.07)": "rgba(107,128,84,0.12)",
     "rgba(81,87,59,0.10)": "rgba(107,128,84,0.16)",
-    "rgba(222,106,65,0.08)": "rgba(168,118,58,0.12)",
+}
+
+# One-time revert of the v1.3 golden-milk-tea experiment back to orange.
+REVERT_MAP = {
+    "#a8763a": "#DE6A41",
+    "#8a5f2e": "#F05A0F",
+    "rgba(168,118,58,0.12)": "rgba(222,106,65,0.08)",
 }
 
 # Same faint matcha grid the NIS2 deck draws on every slide.
@@ -61,6 +67,8 @@ def main() -> None:
     for path in FILES:
         html = path.read_text()
         for old, new in COLOR_MAP.items():
+            html = html.replace(old, new)
+        for old, new in REVERT_MAP.items():
             html = html.replace(old, new)
         html = html.replace("background: var(--bg);", GRID)
         path.write_text(html)
