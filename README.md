@@ -4,15 +4,20 @@ Workshop deck and companion image for the BornHack 2026 workshop
 **"Docker for the Curious"** — Friday 17 Jul 2026, 15:00–17:00, Workshop Room.
 Host: Gorm Reventlow.
 
-## Run the deck
+## Run the deck (also your fallback if the hosted deck is down)
+
+Every push to `main` publishes the deck to Docker Hub, so wherever the
+hosted copy lives, you can always pull the slides and run them locally:
 
 ```sh
+docker pull elohite/bornhack-deck:latest
 docker run -d -p 8080:80 elohite/bornhack-deck
 # open http://localhost:8080 — arrow keys / space to navigate, "f" toggles fullscreen
 ```
 
 The deck is fully self-contained (fonts inlined) and works offline.
-Browser print gives one page per slide.
+Browser print gives one page per slide. Pin a version tag
+(e.g. `elohite/bornhack-deck:1.5`) if you want the exact deck as presented.
 
 ## The companion image attendees pull
 
