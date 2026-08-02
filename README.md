@@ -12,7 +12,8 @@ hosted copy lives, you can always pull the slides and run them locally:
 ```sh
 docker pull elohite/bornhack-deck:latest
 docker run -d -p 8080:80 elohite/bornhack-deck
-# open http://localhost:8080 — arrow keys / space to navigate, "f" toggles fullscreen
+# open http://localhost:8080 — arrow keys / space to navigate; "f" fullscreen,
+# "s" slide rail, "n" speaker notes (also buttons bottom-left)
 ```
 
 The deck is fully self-contained (fonts inlined) and works offline.
@@ -43,7 +44,11 @@ source/                ← editable design-tool source; kept for provenance only
 Edits to the deck happen in `source/Docker for the Curious.dc.html` and are
 re-bundled by the design tool; `deck/index.html` is the build artifact we serve.
 After a re-bundle, run `./scripts/patch-deck.sh` to re-apply the tab title,
-favicon, and the "f" fullscreen toggle (the bundler's outer shell lacks them).
+favicon, the "f" fullscreen toggle, and the presenter bar (Slides "s" /
+Notes "n" / Fullscreen buttons) — the bundler's outer shell lacks them.
+The speaker notes shown by "n" are maintained in `scripts/patch-deck.sh`
+(a per-slide-label map), since the slide markup itself sits inside the
+compiled bundle and can't carry `data-speaker-notes` attributes.
 
 ## CI / publishing
 
