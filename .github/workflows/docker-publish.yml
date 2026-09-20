@@ -19,7 +19,7 @@ jobs:
       - id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ secrets.DOCKERHUB_USERNAME }}/bornhack-deck
+          images: ${{ secrets.DOCKERHUB_USERNAME }}/docker-workshop-deck
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
             type=match,pattern=v(.*),group=1
@@ -42,7 +42,7 @@ jobs:
       - id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ secrets.DOCKERHUB_USERNAME }}/bornhack2026
+          images: ${{ secrets.DOCKERHUB_USERNAME }}/docker-workshop
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
             type=match,pattern=v(.*),group=1
