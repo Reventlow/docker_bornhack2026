@@ -208,7 +208,7 @@ read -r -d '' PRESENTER <<'EOF' || true
           "Two Services": "Demo only, do NOT have the room pull mysql on the shared wifi, that is why the slide says watch. Show wordpress finding its database simply by the service name db. This is where compose stops being convenience and starts being the point.",
           "Task 6 Build": "Their first image: FROM nginx:alpine plus one COPY line, that is a complete Dockerfile. Tag it username/iwasat:1.0. Say it twice: the trailing dot on docker build is the build context, forgetting it is the number one error.",
           "Task 7 Push": "The payoff of the whole day: login, push, then run a neighbor's image straight from the Hub. Get usernames shouted across the room and pages running on other people's laptops, let this peak run a few minutes. One warning: the image is public, never bake secrets into one.",
-          "Recap": "Sweep the vocabulary list and point out they now own every word on it, two hours ago none of it meant anything. Point at docs.docker.com, hub.docker.com and play-with-docker.com for the days after. Thank them and stay around for questions."
+          "Recap": "Sweep the vocabulary list and point out they now own every word on it, two hours ago none of it meant anything. Point at docs.docker.com, hub.docker.com and play-with-docker.com for the days after. Contact details and the PGP fingerprint are on screen, so leave this slide up while people pack down. Thank them and stay around for questions."
         },
         da: {
           "Title": "Byd folk velkommen, mens de sætter sig — laptops frem fra starten. Ingen forkundskaber forventes, det er målgruppen. Nævn, at den allerførste opgave er at installere Docker, så få fat i wifi nu.",
@@ -230,7 +230,7 @@ read -r -d '' PRESENTER <<'EOF' || true
           "Two Services": "Kun demo — lad IKKE lokalet hente mysql på det delte wifi, derfor står der kig med på slidet. Vis, at wordpress finder sin database bare ved service-navnet db. Her holder compose op med at være bekvemmelighed og bliver selve pointen.",
           "Task 6 Build": "Deres første image: FROM nginx:alpine plus én COPY-linje — det er en komplet Dockerfile. Tag det brugernavn/iwasat:1.0. Sig det to gange: punktummet til sidst i docker build er build-konteksten, og at glemme det er fejl nummer ét.",
           "Task 7 Push": "Hele dagens belønning: login, push, og kør så en nabos image direkte fra Hub. Få brugernavne råbt på tværs af lokalet og sider kørende på andres laptops — lad toppen vare et par minutter. Én advarsel: imaget er offentligt, bag aldrig hemmeligheder ind i et.",
-          "Recap": "Gå ordlisten igennem og påpeg, at de nu ejer hvert ord på den — for to timer siden betød ingen af dem noget. Peg på docs.docker.com, hub.docker.com og play-with-docker.com til dagene efter. Sig tak og bliv hængende til spørgsmål."
+          "Recap": "Gå ordlisten igennem og påpeg, at de nu ejer hvert ord på den — for to timer siden betød ingen af dem noget. Peg på docs.docker.com, hub.docker.com og play-with-docker.com til dagene efter. Kontaktoplysninger og PGP-fingeraftryk står på skærmen, så lad slidet blive stående, mens folk pakker sammen. Sig tak og bliv hængende til spørgsmål."
         }
       }[lang];
 
