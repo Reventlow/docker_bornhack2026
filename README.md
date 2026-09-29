@@ -47,6 +47,7 @@ deck/index.html        ← the deck, compiled single-file bundle. Do not hand-ed
 Dockerfile             ← deck image (nginx:alpine serving deck/index.html)
 workshop-image/        ← companion image (Debian nginx + nano + landing page)
 source/                ← editable slide sources: *.dc.html (EN) and *.da.dc.html (DA)
+source/assets/         ← images the slides reference as ./assets/<file>
 scripts/build-deck.py  ← rebuilds deck/index.html from source/ (then runs patch-deck.sh)
 scripts/patch-deck.sh  ← injects language toggle, presenter bar, speaker notes, favicon
 .github/workflows/     ← CI: build + push both images to Docker Hub
@@ -59,6 +60,11 @@ scripts/patch-deck.sh  ← injects language toggle, presenter bar, speaker notes
    structurally identical — same slides, same order, same `data-label`
    attributes (those are the keys for the speaker notes). Only the visible
    text and `data-screen-label` differ.
+Images go in `source/assets/` and are referenced as
+`src="./assets/<file>"`, which keeps the sources viewable in a plain
+browser; the build ships each file once as a data URI and resolves the
+paths at load, so the deck stays a single offline file.
+
 2. Run `./scripts/build-deck.py`. It splices both slide sets into the
    bundle (the bundler stores the whole document as a JSON string that its
    bootloader parses at load — no design tool needed), refuses to build if

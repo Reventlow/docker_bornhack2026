@@ -16,6 +16,9 @@
 #       __bundler/template-da, written by build-deck.py) into the bundler's
 #       template BEFORE its DOMContentLoaded bootloader parses it, so the
 #       runtime renders the Danish deck natively — rail, labels, print
+#     * resolves ./assets/<file> paths in the template against the
+#       __bundler/assets map (also from build-deck.py), so an image ships
+#       once and is shared by both languages
 #     * exposes window.__deckSetLang(lang): remembers the choice and reloads
 #       with ?lang= set; deck-stage keeps the slide index in location.hash,
 #       so the switch lands on the same slide
@@ -60,19 +63,34 @@ read -r -d '' LANG_BLOCK <<'EOF' || true
       window.__deckLang = lang;
       window.__deckLangs = LANGS;
 
-      if (lang === 'da') {
-        var tplEl = document.querySelector('script[type="__bundler/template"]');
-        var daEl  = document.querySelector('script[type="__bundler/template-da"]');
-        if (tplEl && daEl) {
-          var tpl  = JSON.parse(tplEl.textContent);
+      /* Rewrite the bundler's template before its DOMContentLoaded
+         bootloader reads it: swap in the Danish slides when Danish is
+         chosen, and resolve ./assets/<file> paths against the asset map
+         build-deck.py ships (one copy, shared by both languages). */
+      var tplEl = document.querySelector('script[type="__bundler/template"]');
+      if (tplEl) {
+        var tpl = JSON.parse(tplEl.textContent);
+        var before = tpl;
+
+        var daEl = document.querySelector('script[type="__bundler/template-da"]');
+        if (lang === 'da' && daEl) {
           var body = JSON.parse(daEl.textContent);
           /* Keep the bundler's own <x-import …> tag (its `from` is a manifest
              UUID); replace only the slides between it and </x-import>. A
              function replacer keeps any "$" in the markup literal. */
           tpl = tpl.replace(/(<x-import\b[^>]*>)[\s\S]*?(<\/x-import>)/,
             function (_, open, close) { return open + body + close; });
-          tplEl.textContent = JSON.stringify(tpl);
         }
+
+        var aEl = document.querySelector('script[type="__bundler/assets"]');
+        if (aEl) {
+          var assets = JSON.parse(JSON.parse(aEl.textContent));
+          tpl = tpl.replace(/src="\.\/assets\/([^"]+)"/g, function (m, name) {
+            return assets[name] ? 'src="' + assets[name] + '"' : m;
+          });
+        }
+
+        if (tpl !== before) tplEl.textContent = JSON.stringify(tpl);
       }
 
       window.__deckSetLang = function (next) {
@@ -172,6 +190,7 @@ read -r -d '' PRESENTER <<'EOF' || true
       var NOTES = {
         en: {
           "Title": "Welcome people as they settle, laptops out from the start. Zero prior experience expected, that is the audience. Mention that the very first task is installing Docker, so get on the wifi now.",
+          "About": "Thirty seconds, not three minutes — they came for Docker, not for me. Day job is compliance at FynBus, which is why containers matter to me as something auditable and reproducible, not just convenient. Open source and the homelab are where the hands-on part comes from; everything in this deck is something I actually run. Then straight on to the format.",
           "Format": "Explain the shape: half explaining, half typing, eight tasks that each build on the last. Amber TASK badge means hands on keyboard. Finished early? Help the neighbors, teaching it is learning it twice. No laptop means pair up, one keyboard is plenty.",
           "Why": "Open with the works-on-my-machine story, everyone nods. Land the idea: an app is never just code, it drags along a runtime, libraries, config and machine quirks. A container packs the app together with everything it needs into one sealed unit.",
           "Container": "Three properties, one line each: isolated in its own filesystem, network and process list; lightweight because it shares your kernel and starts in milliseconds; portable because the same image runs identically anywhere. Land the demystifier: not magic, just a normal process in a sealed little world.",
@@ -193,6 +212,7 @@ read -r -d '' PRESENTER <<'EOF' || true
         },
         da: {
           "Title": "Byd folk velkommen, mens de sætter sig — laptops frem fra starten. Ingen forkundskaber forventes, det er målgruppen. Nævn, at den allerførste opgave er at installere Docker, så få fat i wifi nu.",
+          "About": "Tredive sekunder, ikke tre minutter — de kom for Dockers skyld, ikke for min. Til daglig er det compliance hos FynBus, og derfor betyder containere noget for mig som noget, der kan revideres og gentages, ikke bare noget bekvemt. Open source og homelabbet er der, det praktiske kommer fra; alt i dette oplæg er noget, jeg selv kører. Videre til formen.",
           "Format": "Forklar formen: halvt forklaring, halvt tastatur, otte opgaver, der hver bygger på den forrige. Orange OPGAVE-mærke betyder hænderne på tastaturet. Færdig før tid? Hjælp naboerne — at lære fra sig er at lære det to gange. Ingen laptop betyder par, ét tastatur er rigeligt.",
           "Why": "Åbn med virker-på-min-maskine-historien, alle nikker. Land pointen: en app er aldrig bare kode, den slæber runtime, biblioteker, konfiguration og maskinens særheder med sig. En container pakker appen sammen med alt, den har brug for, i én forseglet enhed.",
           "Container": "Tre egenskaber, én linje hver: isoleret i sit eget filsystem, netværk og procesliste; letvægt fordi den deler din kerne og starter på millisekunder; flytbar fordi det samme image kører identisk overalt. Land afmystificeringen: ikke magi, bare en almindelig proces i en lille forseglet verden.",
